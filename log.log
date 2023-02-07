@@ -1,0 +1,30 @@
+1c609838cb2cd32c783b052e0fca5c1d61b132bdd7ec7c8452f63c45c26a7375
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+CONTAINER ID   IMAGE          COMMAND                  CREATED              STATUS              PORTS                     NAMES
+1c609838cb2c   nginx:stable   "/docker-entrypoint.…"   About a minute ago   Up About a minute   127.0.0.1:28080->80/tcp   rbm-dkr-01
+rbm-dkr-01
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS                      PORTS     NAMES
+1c609838cb2c   nginx:stable   "/docker-entrypoint.…"   2 minutes ago   Exited (0) 39 seconds ago             rbm-dkr-01
