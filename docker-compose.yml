@@ -5,5 +5,4 @@ services:
   nginx:
     image: nginx
     ports:
-      - 8890:80
-        
+      - 8891:80
