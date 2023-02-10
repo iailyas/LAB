@@ -1,4 +1,0 @@
-CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS     NAMES
-338ccf360913   nginx:stable   "/docker-entrypoint.…"   39 seconds ago   Up 39 seconds   80/tcp    rbm-dkr-05-stop
-75665a3e88cf   nginx:stable   "/docker-entrypoint.…"   4 minutes ago    Up 4 minutes    80/tcp    rbm-dkr-05-run-c79e80c6a5
-ea1aeb39487d   nginx:stable   "/docker-entrypoint.…"   5 minutes ago    Up 5 minutes    80/tcp    rbm-dkr-05-run-0d3c983ad0
