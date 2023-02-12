@@ -3,6 +3,6 @@ version: '3.0'
 services:
 
   nginx:
-    image: nginx
+    image: nginx:stable
     ports:
-      - 8891:80
+      - 8901:80
