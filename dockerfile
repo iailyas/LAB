@@ -1,10 +1,26 @@
-ARG NG_VERSION
+FROM ubuntu:20.04
 
-FROM nginx:$NG_VERSION
+ENV testenv1=env1
 
-ARG ARG_FILE
+#создадим пользователя
+RUN groupadd --gid 2000 user && useradd --uid 2000 --gid 2000 --shell /bin/bash --create-home user
 
-RUN mkdir -p /opt/$ARG_FILE
+#посмотрим состояние кэша apt до установки nginx
+RUN ls -lah /var/lib/apt/lists/
+RUN apt-get update -y && apt-get install nginx -y && rm -rf /var/lib/apt/lists/*
 
-ENV ARG_FILE $ARG_FILE
+#Повторно проверим состояние кэша apt
+RUN ls -lah /var/lib/apt/lists/
+
+#Очистим кзш
+RUN rm -rf /var/lib/apt/lists/*
+RUN ls -lah /var/lib/apt/lists/
+
+#Скопируем наш тестовый файл
+COPY --chown=user:user testfile ./ 
+
+#Сменим права
+#RUN chown user:user testfile
+USER user
+CMD ["sleep infinity"]
 
