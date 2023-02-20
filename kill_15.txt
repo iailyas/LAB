@@ -1,0 +1,5 @@
+CONTAINER ID   IMAGE                 COMMAND                  CREATED          STATUS                            PORTS     NAMES
+95b9882cf98f   nginx:stable-alpine   "/docker-entrypoint.…"   11 minutes ago   Exited (137) About a minute ago             rbm-dkr-23-unless-stopped
+fe7aae34e633   nginx:stable-alpine   "/docker-entrypoint.…"   12 minutes ago   Exited (137) 56 seconds ago                 rbm-dkr-23-always
+f4ba7a4a9716   nginx:stable-alpine   "/docker-entrypoint.…"   12 minutes ago   Exited (137) 46 seconds ago                 rbm-dkr-23-on-dailure
+bb8cc7276baa   nginx:stable-alpine   "/docker-entrypoint.…"   12 minutes ago   Exited (137) 36 seconds ago                 rbm-dkr-23-no
