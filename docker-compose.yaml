@@ -1,49 +1,66 @@
-version: "3"
+version: '3'
 services:
-
- gocalc:
-   build: ./gocalc
-   command: ['./app']
-   ports:
-      - "7000:7000"
-   links:
-   - db
-   volumes:
-   - ./gocalc:/app
-   environment:
-      - POSTGRES_URI=postgres://postgres:postgres@db/postgres?sslmode=disable
-      - LISTEN_ADDRESS=:7000
-   depends_on: 
-       db:
-           condition: service_healthy
-   
-   
- db:
-  image: postgres:latest
-  environment: 
-       PGUSER: postgres
-       POSTGRES_PASSWORD: postgres
-  ports:
-      - "7001:5432"
-  healthcheck:
-      test: [ "CMD", "pg_isready" ]
+  gocalc:
+    build: ./gocalc
+    restart: unless-stopped
+    command:
+      - ./app
+    ports:
+      - '7002:7002'
+    volumes:
+      - './gocalc:/app'
+    environment:
+      - 'POSTGRES_URI=postgres://postgres:postgres@db/postgres?sslmode=disable'
+      - 'LISTEN_ADDRESS=:7002'
+    networks:
+      - frontend
+      -  backend
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: 'postgres:latest'
+    environment:
+      PGUSER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - '7001:5432'
+    networks:
+      -  backend
+    healthcheck:
+      test:
+        - CMD
+        - pg_isready
       interval: 10s
       timeout: 5s
       retries: 5
- proxy:
+  proxy:
     image: nginx
+    cap_drop:
+      - ALL
+    cap_add:
+      - chown
+      - dac_override
+      - setgid
+      - setuid
+      - net_bind_service
     volumes:
       - type: bind
         source: ./proxy/nginx.conf
         target: /etc/nginx/conf.d/default.conf
         read_only: true
     ports:
-      - 80:80
-    depends_on: 
+      - '80:80'
+    networks:
+      - frontend
+    depends_on:
       - gocalc
- 
-      
- 
-   
- 
 
+networks:
+  frontend:
+    driver: bridge
+    name: frontend
+  backend:
+    driver: bridge
+    name: backend
+  
