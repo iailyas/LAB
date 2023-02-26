@@ -1,0 +1,135 @@
+Script started on 2022-11-01 17:49:29+03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="23"]
+[?2004h]0;pavel@pashok-evs: ~/gocalc[01;32mpavel@pashok-evs[00m:[01;34m~/gocalc[00m$ g[Kdocker rm[K[Kbui;ld[K[K[Kld ~/gocalc/[C[C- ~/gocalc/f ~/gocalc/[C[C[C[C[C[C[C[C[C[CDO[Ko[1@ [C[C[C[C[C[C[C[C[C[C[C[C[C[Cckerfile -t goimage ~/gocalc/
+[?2004lSending build context to Docker daemon  67.58kB
+Step 1/17 : FROM golang:1.19.1-alpine AS build
+1.19.1-alpine: Pulling from library/golang
+
+[1A[2K213ec9aee27d: Pulling fs layer [1B
+[1A[2K5299e6f78605: Pulling fs layer [1B
+[1A[2K1cab0e43db0a: Pulling fs layer [1B
+[1A[2K6569e6eb40cd: Pulling fs layer [1B
+[1A[2K601c7710d0ea: Pulling fs layer [1B[2A[2K6569e6eb40cd: Waiting [2B[1A[2K601c7710d0ea: Waiting [1B[4A[2K5299e6f78605: Downloading  3.494kB/284.7kB[4B[5A[2K213ec9aee27d: Downloading  28.12kB/2.806MB[5B[3A[2K1cab0e43db0a: Downloading     155B/155B[3B[3A[2K1cab0e43db0a: Download complete [3B[4A[2K5299e6f78605: Downloading  147.3kB/284.7kB[4B[5A[2K213ec9aee27d: Downloading  175.8kB/2.806MB[5B[4A[2K5299e6f78605: Downloading  284.7kB/284.7kB[4B[4A[2K5299e6f78605: Verifying Checksum [4B[4A[2K5299e6f78605: Download complete [4B[5A[2K213ec9aee27d: Downloading  706.9kB/2.806MB[5B[5A[2K213ec9aee27d: Downloading  1.002MB/2.806MB[5B[5A[2K213ec9aee27d: Downloading  1.854MB/2.806MB[5B[5A[2K213ec9aee27d: Downloading   2.44MB/2.806MB[5B[5A[2K213ec9aee27d: Verifying Checksum [5B[5A[2K213ec9aee27d: Download complete [5B[5A[2K213ec9aee27d: Extracting  32.77kB/2.806MB[5B[5A[2K213ec9aee27d: Extracting  2.806MB/2.806MB[5B[5A[2K213ec9aee27d: Pull complete [5B[4A[2K5299e6f78605: Extracting  32.77kB/284.7kB[4B[4A[2K5299e6f78605: Extracting  284.7kB/284.7kB[4B[4A[2K5299e6f78605: Extracting  284.7kB/284.7kB[4B[4A[2K5299e6f78605: Pull complete [4B[3A[2K1cab0e43db0a: Extracting     155B/155B[3B[3A[2K1cab0e43db0a: Extracting     155B/155B[3B[2A[2K6569e6eb40cd: Downloading    540kB/122.2MB[2B[3A[2K1cab0e43db0a: Pull complete [3B[2A[2K6569e6eb40cd: Downloading  1.612MB/122.2MB[2B[1A[2K601c7710d0ea: Downloading     155B/155B[1B[1A[2K601c7710d0ea: Verifying Checksum [1B[1A[2K601c7710d0ea: Download complete [1B[2A[2K6569e6eb40cd: Downloading   3.23MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  4.299MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  5.921MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  7.002MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  8.612MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  9.685MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  10.76MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading   11.3MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  12.37MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  13.99MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  15.62MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  17.24MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  17.78MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading   19.4MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  20.48MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  22.63MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  24.25MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  25.32MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  26.94MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  28.54MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  29.62MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  30.69MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  32.31MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  33.93MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  35.55MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  37.16MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  38.23MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  39.31MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  40.39MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading     42MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  42.54MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  43.62MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  44.71MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  45.25MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  46.33MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  46.87MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  47.95MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  49.03MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  50.11MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  51.18MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  52.26MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  53.34MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  54.96MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  56.04MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  57.11MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  58.18MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  59.25MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  59.79MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  60.86MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  61.41MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  61.93MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  63.56MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  64.63MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  65.17MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  66.23MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  67.31MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  68.39MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  69.47MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  70.54MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  71.08MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  73.23MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  74.31MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  75.39MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  76.47MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  78.07MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  79.15MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  80.77MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  81.85MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  82.39MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  83.46MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  84.54MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  85.08MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  86.15MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  87.23MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  88.31MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  89.39MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  90.45MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  91.52MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  92.06MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  93.68MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  94.76MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  95.84MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  97.45MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  98.53MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  99.61MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  100.7MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  101.8MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  102.3MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  103.4MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  104.5MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  106.1MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  106.6MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  107.7MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  108.2MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  109.3MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  110.4MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  111.5MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading    112MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  112.5MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  114.1MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  115.2MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  116.3MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  117.4MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  118.4MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  119.5MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  120.6MB/122.2MB[2B[2A[2K6569e6eb40cd: Downloading  121.7MB/122.2MB[2B[2A[2K6569e6eb40cd: Verifying Checksum [2B[2A[2K6569e6eb40cd: Download complete [2B[2A[2K6569e6eb40cd: Extracting  557.1kB/122.2MB[2B[2A[2K6569e6eb40cd: Extracting   11.7MB/122.2MB[2B[2A[2K6569e6eb40cd: Extracting  16.71MB/122.2MB[2B[2A[2K6569e6eb40cd: Extracting   23.4MB/122.2MB[2B[2A[2K6569e6eb40cd: Extracting  30.08MB/122.2MB[2B[2A[2K6569e6eb40cd: Extracting  36.77MB/122.2MB[2B[2A[2K6569e6eb40cd: Extracting  49.02MB/122.2MB[2B[2A[2K6569e6eb40cd: Extracting  64.06MB/122.2MB[2B[2A[2K6569e6eb40cd: Extracting  78.54MB/122.2MB[2B[2A[2K6569e6eb40cd: Extracting  93.03MB/122.2MB[2B[2A[2K6569e6eb40cd: Extracting  99.16MB/122.2MB[2B[2A[2K6569e6eb40cd: Extracting  101.4MB/122.2MB[2B[2A[2K6569e6eb40cd: Extracting  104.7MB/122.2MB[2B[2A[2K6569e6eb40cd: Extracting  109.7MB/122.2MB[2B[2A[2K6569e6eb40cd: Extracting  112.5MB/122.2MB[2B[2A[2K6569e6eb40cd: Extracting  116.4MB/122.2MB[2B[2A[2K6569e6eb40cd: Extracting  120.3MB/122.2MB[2B[2A[2K6569e6eb40cd: Extracting    122MB/122.2MB[2B[2A[2K6569e6eb40cd: Extracting  122.2MB/122.2MB[2B[2A[2K6569e6eb40cd: Pull complete [2B[1A[2K601c7710d0ea: Extracting     155B/155B[1B[1A[2K601c7710d0ea: Extracting     155B/155B[1B[1A[2K601c7710d0ea: Pull complete [1BDigest: sha256:d475cef843a02575ebdcb1416d98cd76bab90a5ae8bc2cd15f357fc08b6a329f
+Status: Downloaded newer image for golang:1.19.1-alpine
+ ---> 5dd973625d31
+Step 2/17 : WORKDIR /go/src/myapp/
+ ---> Running in 327db7b29d1d
+Removing intermediate container 327db7b29d1d
+ ---> adfb3fa3a80b
+Step 3/17 : COPY main.go .
+ ---> 19a1ea51de55
+Step 4/17 : RUN go mod init main.go
+ ---> Running in ec78b7397ebd
+[91mgo: creating new go.mod: module main.go
+[0m[91mgo: to add module requirements and sums:
+	go mod tidy
+[0mRemoving intermediate container ec78b7397ebd
+ ---> 3a10be069be4
+Step 5/17 : RUN go get database/sql
+ ---> Running in 533df0015e30
+Removing intermediate container 533df0015e30
+ ---> 0423eeeb610c
+Step 6/17 : RUN go get fmt
+ ---> Running in cf407a57e12c
+Removing intermediate container cf407a57e12c
+ ---> 8f5c3d9963f7
+Step 7/17 : RUN go get github.com/lib/pq
+ ---> Running in 6f3e3d343613
+[91mgo: downloading github.com/lib/pq v1.10.7
+[0m[91mgo: added github.com/lib/pq v1.10.7
+[0mRemoving intermediate container 6f3e3d343613
+ ---> a731b6c77316
+Step 8/17 : RUN go get log
+ ---> Running in 8f2d0719079a
+Removing intermediate container 8f2d0719079a
+ ---> ef591a1d9851
+Step 9/17 : RUN go get net/http
+ ---> Running in 512b32cf1649
+Removing intermediate container 512b32cf1649
+ ---> a52b63e94c53
+Step 10/17 : RUN go get github.com/caarlos0/env
+ ---> Running in 2a49e1f41d99
+[91mgo: downloading github.com/caarlos0/env v3.5.0+incompatible
+[0m[91mgo: added github.com/caarlos0/env v3.5.0+incompatible
+[0mRemoving intermediate container 2a49e1f41d99
+ ---> d7ca0f4a308e
+Step 11/17 : RUN go get github.com/prometheus/client_golang/prometheus
+ ---> Running in 8e8a8ebda825
+[91mgo: downloading github.com/prometheus/client_golang v1.13.0
+[0m[91mgo: downloading github.com/golang/protobuf v1.5.2
+[0m[91mgo: downloading github.com/beorn7/perks v1.0.1
+[0m[91mgo: downloading github.com/cespare/xxhash/v2 v2.1.2
+[0m[91mgo: downloading github.com/prometheus/client_model v0.2.0
+go: downloading github.com/prometheus/common v0.37.0
+[0m[91mgo: downloading github.com/prometheus/procfs v0.8.0
+[0m[91mgo: downloading golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a
+[0m[91mgo: downloading google.golang.org/protobuf v1.28.1
+[0m[91mgo: downloading github.com/matttproud/golang_protobuf_extensions v1.0.1
+[0m[91mgo: added github.com/beorn7/perks v1.0.1
+go: added github.com/cespare/xxhash/v2 v2.1.2
+go: added github.com/golang/protobuf v1.5.2
+go: added github.com/matttproud/golang_protobuf_extensions v1.0.1
+go: added github.com/prometheus/client_golang v1.13.0
+go: added github.com/prometheus/client_model v0.2.0
+go: added github.com/prometheus/common v0.37.0
+go: added github.com/prometheus/procfs v0.8.0
+go: added golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a
+go: added google.golang.org/protobuf v1.28.1
+[0mRemoving intermediate container 8e8a8ebda825
+ ---> 790a197f4d53
+Step 12/17 : RUN go get github.com/prometheus/client_golang/prometheus/promhttp
+ ---> Running in 56e6138df5b2
+Removing intermediate container 56e6138df5b2
+ ---> d16ece829251
+Step 13/17 : RUN CGO_ENABLED=0 GOOS=linux  go build -a -installsuffix cgo -o app .
+ ---> Running in 85bc573afd79
+Removing intermediate container 85bc573afd79
+ ---> b2908448a1df
+Step 14/17 : FROM alpine:3.10.3
+3.10.3: Pulling from library/alpine
+
+[1A[2K89d9c30c1d48: Pulling fs layer [1B[1A[2K89d9c30c1d48: Downloading  28.75kB/2.787MB[1B[1A[2K89d9c30c1d48: Downloading    148kB/2.787MB[1B[1A[2K89d9c30c1d48: Downloading  653.7kB/2.787MB[1B[1A[2K89d9c30c1d48: Downloading  2.247MB/2.787MB[1B[1A[2K89d9c30c1d48: Downloading  2.345MB/2.787MB[1B[1A[2K89d9c30c1d48: Verifying Checksum [1B[1A[2K89d9c30c1d48: Download complete [1B[1A[2K89d9c30c1d48: Extracting  32.77kB/2.787MB[1B[1A[2K89d9c30c1d48: Extracting  2.787MB/2.787MB[1B[1A[2K89d9c30c1d48: Pull complete [1BDigest: sha256:c19173c5ada610a5989151111163d28a67368362762534d8a8121ce95cf2bd5a
+Status: Downloaded newer image for alpine:3.10.3
+ ---> 965ea09ff2eb
+Step 15/17 : WORKDIR /root/
+ ---> Running in 531d87e641a2
+Removing intermediate container 531d87e641a2
+ ---> fef1929dfb04
+Step 16/17 : COPY --from=build /go/src/myapp/app .
+ ---> 8d50bfd71732
+Step 17/17 : CMD ["./app"]
+ ---> Running in 14587054d7ea
+Removing intermediate container 14587054d7ea
+ ---> 4979f6b926ef
+Successfully built 4979f6b926ef
+Successfully tagged goimage:latest
+[?2004h]0;pavel@pashok-evs: ~/gocalc[01;32mpavel@pashok-evs[00m:[01;34m~/gocalc[00m$ docker run go
+goimage               golang                
+goimage:latest        golang:1.19.1-alpine  
+]0;pavel@pashok-evs: ~/gocalc[01;32mpavel@pashok-evs[00m:[01;34m~/gocalc[00m$ docker run goimage:latest 
+[?2004l2022/11/01 14:51:33 Can't ping database: dial tcp 127.0.0.1:5432: connect: connection refused
+[?2004h]0;pavel@pashok-evs: ~/gocalc[01;32mpavel@pashok-evs[00m:[01;34m~/gocalc[00m$ exi[K[K[Kdocker images
+[?2004lREPOSITORY   TAG             IMAGE ID       CREATED          SIZE
+goimage      latest          4979f6b926ef   26 seconds ago   18.4MB
+<none>       <none>          b2908448a1df   32 seconds ago   486MB
+golang       1.19.1-alpine   5dd973625d31   7 weeks ago      352MB
+alpine       3.10.3          965ea09ff2eb   3 years ago      5.55MB
+[?2004h]0;pavel@pashok-evs: ~/gocalc[01;32mpavel@pashok-evs[00m:[01;34m~/gocalc[00m$ docker history g[Kgi[Ko
+goimage:latest        golang:1.19.1-alpine  
+]0;pavel@pashok-evs: ~/gocalc[01;32mpavel@pashok-evs[00m:[01;34m~/gocalc[00m$ docker history goimage:latest --[K[K[K
+[?2004lIMAGE          CREATED          CREATED BY                                      SIZE      COMMENT
+4979f6b926ef   53 seconds ago   /bin/sh -c #(nop)  CMD ["./app"]                0B        
+8d50bfd71732   54 seconds ago   /bin/sh -c #(nop) COPY file:34d1ade811faa5c8…   12.8MB    
+fef1929dfb04   54 seconds ago   /bin/sh -c #(nop) WORKDIR /root/                0B        
+965ea09ff2eb   3 years ago      /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B        
+<missing>      3 years ago      /bin/sh -c #(nop) ADD file:fe1f09249227e2da2…   5.55MB    
+[?2004h]0;pavel@pashok-evs: ~/gocalc[01;32mpavel@pashok-evs[00m:[01;34m~/gocalc[00m$ docker history goimage:latest --no-trunc 
+[?2004lIMAGE                                                                     CREATED              CREATED BY                                                                                           SIZE      COMMENT
+sha256:4979f6b926ef78bd181ee3225fbde4053a362bf70701d0613762241f0248a4f0   About a minute ago   /bin/sh -c #(nop)  CMD ["./app"]                                                                     0B        
+sha256:8d50bfd71732bf6821fa2436d0c00f2d1161a95cb09ae63898a88cd152878225   About a minute ago   /bin/sh -c #(nop) COPY file:34d1ade811faa5c86cefbed77da4b54890d28b7443934bddb0f2146af854108e in .    12.8MB    
+sha256:fef1929dfb04ea8a0286e9b83d3637a0bedb04e1faa1c38b1fa9b44543906ed8   About a minute ago   /bin/sh -c #(nop) WORKDIR /root/                                                                     0B        
+sha256:965ea09ff2ebd2b9eeec88cd822ce156f6674c7e99be082c7efac3c62f3ff652   3 years ago          /bin/sh -c #(nop)  CMD ["/bin/sh"]                                                                   0B        
+<missing>                                                                 3 years ago          /bin/sh -c #(nop) ADD file:fe1f09249227e2da2089afb4d07e16cbf832eeb804120074acd2b8192876cd28 in /     5.55MB    
+[?2004h]0;pavel@pashok-evs: ~/gocalc[01;32mpavel@pashok-evs[00m:[01;34m~/gocalc[00m$ [K]0;pavel@pashok-evs: ~/gocalc[01;32mpavel@pashok-evs[00m:[01;34m~/gocalc[00m$ [K]0;pavel@pashok-evs: ~/gocalc[01;32mpavel@pashok-evs[00m:[01;34m~/gocalc[00m$ exit
+[?2004lexit
+
+Script done on 2022-11-01 17:52:50+03:00 [COMMAND_EXIT_CODE="0"]
