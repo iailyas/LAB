@@ -1,0 +1,150 @@
+version: '3'
+services:
+  voting:
+    build: ./dkr-30
+    restart: unless-stopped
+    ports:
+      - '8002:8002'
+    volumes:
+      - './dkr-30/:/app'
+    environment:
+       - 'APP_NAME=VoteApp'
+       - 'APP_ENV=production'
+       - 'APP_KEY=base64:WcIFQQUYOUUH4oWc/SDBHQ6XGvYoTOryXMkfUNbZJPM='
+       - 'APP_DEBUG="false"'
+       - 'APP_URL=voting:8002'
+       - 'LOG_CHANNEL=stderr'
+       - 'DB_HOST=db'
+       - 'DB_PORT=3306'
+       - 'DB_DATABASE=voting'
+       - 'DB_USERNAME=voting'
+       - 'DB_PASSWORD=voting'
+       - 'REDIS_HOST=redis'
+       - 'REDIS_PASSWORD=""'
+       - 'SESSION_DRIVER=redis'
+       - 'SESSION_CONNECTION=session'
+       - 'CACHE_DRIVER=redis'
+    expose:
+      - 8002  
+    networks:
+      - mynetwork
+    depends_on:
+      db:
+        condition: service_healthy
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: 0.0.0.0:24224
+        tag: fluent
+  db:
+    image: mysql:latest
+    command: '--default-authentication-plugin=mysql_native_password'
+    restart: always
+    ports:
+      - '3306:3306'
+    networks:
+      - mynetwork
+    environment:
+       - 'MYSQL_ROOT_PASSWORD:voting'
+       - 'MYSQL_HOST=db'
+       - 'MYSQL_PORT=3306'
+       - 'MYSQL_DATABASE:voting'
+       - 'MYSQL_USER=voting'
+       - 'MYSQL_PASSWORD=voting'
+       - 'MYSQL_ROOT_PASSWORD=voting'
+    expose:
+       - 3306
+    
+
+    healthcheck:
+      test: ['CMD-SHELL', 'mysqladmin ping -h db --password="voting" --silent']
+      interval: 3s
+      retries: 5
+      start_period: 30s
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: 0.0.0.0:24224
+        tag: fluent
+  nginx:
+    image: nginx
+    cap_drop:
+      - ALL
+    cap_add:
+      - chown
+      - dac_override
+      - setgid
+      - setuid
+      - net_bind_service
+    volumes:
+      - './dkr-30/nginx/fastcgi.conf:/etc/nginx/fastcgi.conf'
+      - type: bind
+        source: ./dkr-30/nginx/nginx.conf
+        target: /etc/nginx/conf.d/nginx.conf
+        read_only: true
+    networks:
+      - mynetwork
+    ports:
+      - '80:80'
+    environment:
+       - 'APP_NAME=VoteApp'
+       - 'APP_ENV=production'
+       - 'APP_KEY=base64:WcIFQQUYOUUH4oWc/SDBHQ6XGvYoTOryXMkfUNbZJPM='
+       - 'APP_DEBUG="false"'
+       - 'APP_URL=127.0.0.1:9001'
+       - 'LOG_CHANNEL=stderr'
+       - 'DB_HOST=db'
+       - 'DB_PORT=3306'
+       - 'DB_DATABASE=voting'
+       - 'DB_USERNAME=voting'
+       - 'DB_PASSWORD=voting'
+       - 'REDIS_HOST=redis'
+       - 'REDIS_PASSWORD=""'
+       - 'SESSION_DRIVER=redis'
+       - 'SESSION_CONNECTION=session'
+       - 'CACHE_DRIVER=redis'
+    expose:
+      - 8888 
+    depends_on:
+      - voting
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: 0.0.0.0:24224
+        tag: fluent
+  redis:
+    image: redis:latest
+    ports: 
+     - '8004:8004'
+    networks:
+      - mynetwork
+    environment:
+       - 'APP_NAME=VoteApp'
+       - 'APP_ENV=production'
+       - 'APP_KEY=base64:WcIFQQUYOUUH4oWc/SDBHQ6XGvYoTOryXMkfUNbZJPM='
+       - 'APP_DEBUG="false"'
+       - 'APP_URL=127.0.0.1:9001'
+       - 'LOG_CHANNEL=stderr'
+       - 'DB_HOST=db'
+       - 'DB_PORT=3306'
+       - 'DB_DATABASE=voting'
+       - 'DB_USERNAME=voting'
+       - 'DB_PASSWORD=voting'
+       - 'REDIS_HOST=redis'
+       - 'REDIS_PASSWORD=""'
+       - 'SESSION_DRIVER=redis'
+       - 'SESSION_CONNECTION=session'
+       - 'CACHE_DRIVER=redis'
+    expose:
+       - 8004
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: 0.0.0.0:24224
+        tag: fluent
+      
+networks:
+   mynetwork:
+    driver: bridge
+    name: network
+ 
